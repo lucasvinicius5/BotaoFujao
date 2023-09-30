@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .code {
+            /* background-color: rgba(255, 255, 255, 0.7); */
+            padding: 20px;
+            border-radius: 10px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            width: 100px;
+            height: 50px;
+            margin: 0 10px;
+        }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .fixed-button:hover {
+            right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="background-image"
+            src="./simple-red-heart-outline-drawing-free-png.webp"
+            alt="Meu coração">
+        <div class="code">
+            <h1>C#zinho hoje?</h1>
+            <div style="padding-right: 116px;" class="buttons">
+                <button onclick="redirecionarParaYouTube()">Sim</button>
+                <button style="position: absolute;" onmouseover="fuja()" id="nao">Não!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirecionarParaYouTube() {
+            window.location.href = "https://youtu.be/izGwDsrQ1eQ?si=0Rq85GgvpzMBBWen&t=149";
+        }
+
+        function fuja() {
+            var botaoNao = document.getElementById("nao")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+        }
+    </script>
+</body>
+
+</html>
